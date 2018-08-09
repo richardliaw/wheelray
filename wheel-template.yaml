@@ -45,10 +45,10 @@ auth:
 # For more documentation on available fields, see:
 # http://boto3.readthedocs.io/en/latest/reference/services/ec2.html#EC2.ServiceResource.create_instances
 head_node:
-    InstanceType: c5.4xlarge
+    InstanceType: c5.2xlarge
     ImageId: ami-759bc50a
-    InstanceMarketOptions:
-        MarketType: spot
+    # InstanceMarketOptions:
+    #     MarketType: spot
         # Additional options can be found in the boto docs, e.g.
         #   SpotOptions:
         #       MaxPrice: MAX_HOURLY_PRICE

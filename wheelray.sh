@@ -20,4 +20,4 @@ cat $TEMPLATE_YAML | \
 ray teardown $TMP_YAML -y
 ray create_or_update $TMP_YAML -y
 ray exec $TMP_YAML "bash $TMP_SCRIPT setup"
-ray exec --stop --screen $TMP_YAML "bash $TMP_SCRIPT"
+ray exec $TMP_YAML "tmux new -d -s mysession 'bash $TMP_SCRIPT; ray stop; ray teardown ~/ray_bootstrap_config.yaml --yes --workers-only; sudo shutdown -h now'"

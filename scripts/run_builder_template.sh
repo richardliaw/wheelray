@@ -6,7 +6,7 @@ if [[ $1 = "setup" ]]; then
     sudo dpkg --configure -a
     sudo apt-get -qq update
     sudo apt-get install -y python-pip
-    pip install awscli --upgrade --user
+    pip install awscli -q --upgrade --user
     sudo apt-get install -y docker.io
     sudo kill -SIGUSR1 $(pidof dockerd) || true
     sudo service docker start
